@@ -133,6 +133,7 @@ form button{
     margin-top: 40px;
     /*Tempo para transição para 'hover' quando passar o mouse em cima do botão*/
     transition: background-color 400ms;
+    cursor: pointer;
 }
 
 /*Quando passar o mouse em cima do botão*/
@@ -140,3 +141,67 @@ form button:hover{
     background-color: #2fb86e;
 }
 
+.items-grid{
+    /*Flex é unidimensional, porém o grid é multidimensional, ele pode colocar
+    os elementos dispostos como uma matriz*/
+    display: grid ;
+    /*Configura os elementos em três colunas*/
+    grid-template-columns: 1fr 1fr 1fr;
+    /*Igual uma margin*/
+    gap: 16px;
+}
+
+.items-grid li{
+    background-color: #f5f5f5;
+    /*Tira os "pontinhos" da lista*/
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+
+    /*Espaçamento entre o conteudo das boxes e as bordas 32px no topo, 24px nas 
+    laterais e 16px no bottom*/
+    padding: 32px 24px 16px;
+
+    /*Alinha em uma única linha os elementos da 'li'*/
+    display: flex;
+
+    /*Essa linha se torna uma coluna*/
+    flex-direction: column;
+
+    align-items: center;
+    /*Cada elemento em um ponto vertical mais distante em relação ao centro da box*/
+    justify-content: space-between;
+
+    text-align: center;
+
+    /*Muda a "setinha" do mouse para uma "maozinha"*/
+    cursor: pointer;
+
+}
+
+.items-grid li span{
+    margin-top: 12px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+}
+
+/*'li' que tenha uma classe 'selected'*/
+.items-grid li.selected{
+    background: #e1faec;
+    border: 2px solid #34cb79
+
+
+}
+
+/*Para, no JS, o envento de click retorar apenas o 'id' do 'li', e não de seus filhos*/
+.items-grid li img,
+.items-grid li span{
+    pointer-events: none;
+}

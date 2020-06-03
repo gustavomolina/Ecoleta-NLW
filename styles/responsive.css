@@ -19,6 +19,14 @@
     #page-home main{
         align-items: center;
     }
+
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+
+    #page-search-results .cards{
+        height: 250px;
+    }
 }
 /* De 1700px pra mais, aplica as seguintes regras: */
 @media (min-width: 1700px){
