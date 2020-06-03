@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar um ponto de coleta</title>
+
+    <!--Importação das fontes-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <!--Importação dos estilos-->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/create-point.css">
+    <!--CSS da parte responsiva por último-->
+    <link rel="stylesheet" href="/styles/responsive.css">
+
+
+</head>
+<body>
+
+    <div id="page-create-point">
+
+            <header>
+                <img src="/assets/logo.svg" alt="Logomarca">
+                <a href="http://www.google.com.br">
+                    <span></span>
+                    Voltar para a Home
+                </a>
+            </header>
+
+            <!--Box com duas segmentações-->
+            <form action="">
+                <h1>Cadastro do ponto de coleta</h1>
+
+                <!--Coleção de campos, como 'divs'-->
+                <fieldset>
+                    
+                    <legend>
+                        <h2>Dados da entidade</h2>
+                    </legend>
+
+
+                    <!----------------------Agrupamentos---------------------->
+
+
+                    <!--Nome-->
+                    <div class="field">
+                        <!--'label' pertence ao respectivo 'input'-->
+                        <label for="name">Nome da entidade</label>
+                        <input type="text" name="name">
+                    </div>
+                    
+                    <!--Endereço e número/complemento-->
+                    <div class="field-group">
+                        <div class="field">
+                            <label for="address">Endereço</label>
+                            <input type="text" name="address">
+                        </div>
+                        <div class="field">
+                            <label for="address2">Número/Complemento</label>
+                            <input type="text" name="address2">
+                        </div>
+                    </div>
+
+                    <!--Cidade e Estado-->
+                    <div class="field-group">
+                        <div class="field">
+                            <label for="state">Estado</label>
+                            <select name="uf" >
+                                <option value="">Selecione o Estado</option>
+                            </select>
+
+                            <!--Para aparecer na URL o nome do estado (e não um índice, que vinha do JSON, 
+                                isto é tratado no script 'create-point.js')-->
+                            <input type="hidden" name="state">
+                        </div>
+                        <!--Não deve ser capaz de selecionar a cidade antes do estado-->                        
+                        <div class="field">
+                            <label for="city">Cidade</label>
+                            <select name="city" disabled id="seletorCidades">
+                                <option value="">Selecione a Cidade</option>
+                            </select>
+                        </div>  
+
+                    </div>                    
+                    
+                </fieldset>
+
+
+                
+
+                
+
+
+                <button type="submit">Cadastrar ponto de coleta</button>
+            </form>
+
+    </div>
+
+    <script src="/scripts/create-point.js"></script>
+</body>
+</html>
