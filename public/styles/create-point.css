@@ -1,0 +1,216 @@
+/* Elementos com 'id' de nome 'page-create-point'*/
+#page-create-point{
+    width: 90%;
+    max-width: 1100px;
+
+    /*Top-Bottom iguais a 0 e laterais preenchidas automaticamente*/
+    margin: 0 auto;
+}
+
+#page-create-point header{
+    margin-top: 48px;
+
+    display: flex;
+    /* Para cada delemento ficar de um lado da página */
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+
+#page-create-point header a span{
+    margin-right: 16px;
+    background-image: url('../assets/arrow-left.svg');
+
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+
+}
+
+/* Elementos em hierarquia*/
+
+form{
+    background-color: white;
+
+    /*Top-Bottom iguais a 0 e laterais preenchidas automaticamente*/
+    margin: 80px auto;
+    
+    /* Preenchimento Top-Bottom*/
+    padding: 64px;
+
+    border-radius: 8px;
+
+    max-width: 730px;    
+}
+
+form h1{
+    font-size: 36px;
+}
+
+form fieldset{
+    margin-top: 64px;
+    border: 0;
+
+}
+
+form legend{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form legend h2{
+    font-size: 24px;
+}
+
+form  legend span{
+    font-size: 14px;
+    color: var(--title-color);
+}
+
+form .field{
+    /*Estica até o final da box*/
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+
+    margin-bottom: 24px;
+}
+
+form .field-group{
+    display: flex;
+}
+
+
+form input,
+form select{
+    background-color: #f0f0f5;
+    /*Tira a borda*/
+    border: 0;
+    /*16px em cima e em baixo e 24px nas laterais*/
+    padding: 16px 24px;
+    font-size: 16px;
+
+    /**Desabilita a inha que aparece quando o campo é selecionado*/
+    outline: none;
+    /*Borda arredondada*/
+    border-radius: 8px;
+}
+
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+
+}
+
+/*Dentro de quem estivar marcado como 'field-group' pega o primeiro field que for seguido por
+outro field, ou seja, o segundo dos fields*/
+form .field-group .field + .field{
+    /*Aumenta o espaço da sua margem lateral para "desgrudá-lo" do field que está a sua direita*/
+    margin-left: 24px;
+}
+
+form button{
+    width: 260px;
+    height: 56px;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+
+    margin-top: 40px;
+    /*Tempo para transição para 'hover' quando passar o mouse em cima do botão*/
+    transition: background-color 400ms;
+    cursor: pointer;
+}
+
+/*Quando passar o mouse em cima do botão*/
+form button:hover{
+    background-color: #2fb86e;
+}
+
+.items-grid{
+    /*Flex é unidimensional, porém o grid é multidimensional, ele pode colocar
+    os elementos dispostos como uma matriz*/
+    display: grid ;
+    /*Configura os elementos em três colunas*/
+    grid-template-columns: 1fr 1fr 1fr;
+    /*Igual uma margin*/
+    gap: 16px;
+}
+
+.items-grid li{
+    background-color: #f5f5f5;
+    /*Tira os "pontinhos" da lista*/
+    list-style: none;
+
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+
+    /*Espaçamento entre o conteudo das boxes e as bordas 32px no topo, 24px nas 
+    laterais e 16px no bottom*/
+    padding: 32px 24px 16px;
+
+    /*Alinha em uma única linha os elementos da 'li'*/
+    display: flex;
+
+    /*Essa linha se torna uma coluna*/
+    flex-direction: column;
+
+    align-items: center;
+    /*Cada elemento em um ponto vertical mais distante em relação ao centro da box*/
+    justify-content: space-between;
+
+    text-align: center;
+
+    /*Muda a "setinha" do mouse para uma "maozinha"*/
+    cursor: pointer;
+
+}
+
+.items-grid li span{
+    margin-top: 12px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+}
+
+/*'li' que tenha uma classe 'selected'*/
+.items-grid li.selected{
+    background: #e1faec;
+    border: 2px solid #34cb79
+
+
+}
+
+/*Para, no JS, o envento de click retorar apenas o 'id' do 'li', e não de seus filhos*/
+.items-grid li img,
+.items-grid li span{
+    pointer-events: none;
+}

@@ -1,0 +1,39 @@
+{# Layout padrão #}
+
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {# Usa por padrãos e não houver este block#}
+        {% block title %}
+            <title>EColeta</title>
+        {% endblock title %}
+
+        <!--Importação das fontes-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/main.css">
+
+        {% block styles %}{% endblock styles %}
+
+        <!--CSS da parte responsiva por último !important-->
+        <link rel="stylesheet" href="/styles/responsive.css">
+
+    </head>
+    <body>
+
+        <div id="{{ page }}">
+
+            {% block content %}{% endblock content %}
+
+        </div>
+
+        {% block modal %}{% endblock modal %}
+
+        {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>
