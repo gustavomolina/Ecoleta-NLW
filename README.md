@@ -11,3 +11,5 @@ Extensões no VS Code:
 Live Server
 
 Nunjucks Template
+
+sqlite3

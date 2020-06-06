@@ -84,7 +84,7 @@ const itemsToCollect = document.querySelectorAll(".items-grid li")
 
     }
 
-let selectedItems = [1,2,3,4,5,6]
+let selectedItems = []
 
 const collectedItems = document.querySelector("input[name=items]")
 
