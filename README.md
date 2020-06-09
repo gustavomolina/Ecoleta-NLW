@@ -1,15 +1,21 @@
-Pacotes utilizados (pelo npm)
+# Demo
+Apresentação geral do projeto:
 
-express
+![GIF Apresentação](gifs/apresentacao.gif)
 
-nodemon -D
 
-nunjucks
+## Pacotes utilizados (pelo npm)
 
-Extensões no VS Code:
+* express
 
-Live Server
+* nodemon -D
 
-Nunjucks Template
+* nunjucks
 
-sqlite3
+## Extensões no VS Code:
+
+* Live Server
+
+* Nunjucks Template
+
+* sqlite3
